@@ -29,9 +29,11 @@ public class Managers : MonoBehaviour
     InputManager _input = InputManager.Instance;
     KeyManager _key = KeyManager.Instance;
     ResourceManager _resource = ResourceManager.Instance;
+    UIManager _ui = UIManager.Instance;
     public static InputManager Input { get {return Instance._input; } }
     public static KeyManager Key { get {return Instance._key; } }
     public static ResourceManager Resource { get {return Instance._resource; } }
+    public static UIManager UI { get {return Instance._ui; } }
 
     void Start()
     {
