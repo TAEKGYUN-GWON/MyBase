@@ -34,4 +34,10 @@ public class InputManager : Singleton<InputManager>
             }
         }
     }
+
+    public void Clear()
+    {
+        KeyAction = null;
+        MouseAction = null;
+    }
 }

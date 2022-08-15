@@ -15,10 +15,6 @@ public class Singleton<T> where T : Singleton<T>, new()
         }
     }
 
-    protected void Init()
-    {
-    }
-
     public static bool HasInstance()
     {
         return _instance != null ? true : false;
