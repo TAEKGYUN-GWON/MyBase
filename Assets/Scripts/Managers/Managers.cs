@@ -26,6 +26,7 @@ public class Managers : MonoBehaviour
         } 
     }
 
+    DataManager _data = DataManager.Instance;
     InputManager _input = InputManager.Instance;
     KeyManager _key = KeyManager.Instance;
     PoolManager _pool = PoolManager.Instance;
@@ -33,6 +34,7 @@ public class Managers : MonoBehaviour
     SceneManagerEx _scene = SceneManagerEx.Instance;
     SoundManager _sound = SoundManager.Instance;
     UIManager _ui = UIManager.Instance;
+    public static DataManager Data { get {return Instance._data; } }
     public static InputManager Input { get {return Instance._input; } }
     public static KeyManager Key { get {return Instance._key; } }
     public static PoolManager Pool { get {return Instance._pool; } }
@@ -53,6 +55,7 @@ public class Managers : MonoBehaviour
 
     static void Init()
     {
+        s_instance._data.Init();
         s_instance._sound.Init();
         s_instance._pool.Init();
     }
