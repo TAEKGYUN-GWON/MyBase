@@ -20,12 +20,19 @@ public class Managers : MonoBehaviour
 
                 DontDestroyOnLoad(go);
                 s_instance = go.GetComponent<Managers>();
+                Init();
             }
 
             return s_instance;
         } 
     }
 
+    #region Contents
+    GameManagerEX _game = GameManagerEX.Instance;
+    public static GameManagerEX Game { get { return Instance._game; } }
+    #endregion
+
+    #region Core
     DataManager _data = DataManager.Instance;
     InputManager _input = InputManager.Instance;
     KeyManager _key = KeyManager.Instance;
@@ -43,9 +50,10 @@ public class Managers : MonoBehaviour
     public static SoundManager Sound { get {return Instance._sound; } }
     public static UIManager UI { get {return Instance._ui; } }
 
+    #endregion
+
     void Start()
     {
-        Init();
     }
 
     void Update()

@@ -22,11 +22,6 @@ public class UI_Button : UI_Popup
     {
     }
 
-    private void Start()
-    {
-        Init();
-    }
-
     public override void Init()
     {
         base.Init();
@@ -36,7 +31,7 @@ public class UI_Button : UI_Popup
         Bind<GameObject>(typeof(GameObjects));
         Bind<Image>(typeof(Images));
 
-        GetButton((int)Buttons.PointButton).gameObject.AddUIEvent(OnButtonClicked);
+        GetButton((int)Buttons.PointButton).gameObject.BindEvent(OnButtonClicked);
     }
 
     int _score = 0;

@@ -9,6 +9,10 @@ public class GameScene : BaseScene
         base.Init();
 
         SceneType = Define.Scene.Game;
+        gameObject.GetOrAddComponent<CursorController>();
+
+        GameObject player = Managers.Game.Spawn(Define.WorldObject.Player, "UnityChan");
+        Camera.main.gameObject.GetOrAddComponent<CameraController>().SetPlayer(player);
     }
 
     public override void Clear()
